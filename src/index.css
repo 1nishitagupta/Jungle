@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Serif', serif;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 5px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 2px 10px 5px #E1E1E2;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.nav img {
+  width: 100px;
+}
+
+.cart{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #8dbcb3;
+  height: 400%;
+  width: 25%;
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.items{
+  padding-top: 150px ;
+  padding-left: 450px ;
+  display: flex;
+  
+  flex-wrap: wrap;
+}
+
+.plant{
+  display: flex;
+  margin: 30px 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: auto;
+  line-height: 50px;
+  position: relative;
+  box-shadow: 1px 1px 10px 5px #e1e1e1;
+  padding: 10px;
+  border-radius: 20px;
+
+}
+.plant img{
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+}
+.plant .price{
+  background-color: #8dbcb3;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  box-shadow: 1px 1px 10px 5px #e1e1e1;
+  top: 0;
+  right: 0;
+
+}
+.plant button{
+  padding: 10px 20px;
+  background-color: #8dbcb3;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-shadow: 1px 1px 10px 5px #e1e1e1;
+
+}
