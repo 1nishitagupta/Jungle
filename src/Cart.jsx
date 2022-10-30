@@ -1,44 +1,42 @@
-import React, {useEffect} from "react";
-
+import React, {useEffect , useContext} from "react";
+import { UserContext } from "./Items";
+import { useState, createContext } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+ 
 
-function Cart({ cart, setCart }) {
-  // console.log(cart)
+function Cart() {
 
-  useEffect(() => {
-    localStorage.setItem("storedDetail", JSON.stringify(cart));
-  }, [cart])
+  const cart = useContext(UserContext);
+  console.log(cart);
+  
+  
+  
+  const DisplayCart = (cart) => {
 
-  const DisplayCart = () => {
-    // console.log(localStorage)
-    // let d = JSON.parse(localStorage.getItem("storedDetail"));
-    let data = '';
-    if(localStorage.getItem("storedDetail").length > 0){
-      data = JSON.parse(localStorage.getItem("storedDetail"));
-    }
+    let data = cart;
 
-    // console.log(d)
-    if (data) {
-      return data.map((i, index) => {
-        return (
-          <div key={index}>
-            <h3>{i.name}</h3>
-            <h2>{i.price * i.quantity}</h2>
-          </div>
-        );
-      });
+    useEffect(() => {
+      if (data) {
+        console.log(data,"dddddddddddddddd")
+      }
+    }, [cart])
     }
   };
 
   return (
-    <div className="cart">
+    
+      <div className="cart">
       <span>
         <ShoppingCartIcon />
       </span>
       <h1>Your Cart</h1>
-      <DisplayCart />
+      <UserContext.Provider value={cart}>
+
+        <DisplayCart />
+      </UserContext.Provider>
     </div>
+    
   );
-}
+
 
 export default Cart;

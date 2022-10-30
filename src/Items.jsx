@@ -1,9 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useContext , createContext } from "react";
+
 import Cart from "./Cart";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 
-function Items({ items, cart, setCart }) {
+
+export const UserContext = createContext();
+
+function Items({ items }) {
+
+
+  const [cart, setCart] = useState([]);
+
   function display(name, price) {
+    console.log(cart,"hhhhhhhhhhhhhhhhhhhh");
     let existAlready = false;
     if (cart.length > 0) {
       {
@@ -20,9 +29,6 @@ function Items({ items, cart, setCart }) {
     }
   }
 
-  useEffect(() => {
-    localStorage.setItem("storedDetail", JSON.stringify(cart));
-  }, [cart])
 
   const addItemToCart = (name, price) => {
     const itemToadd = {
@@ -36,7 +42,6 @@ function Items({ items, cart, setCart }) {
   };
 
   console.log(cart);
-  console.log(localStorage);
 
   const updateItemInCart = (count) => {
     cart[count].quantity = cart[count].quantity + 1;
@@ -46,7 +51,8 @@ function Items({ items, cart, setCart }) {
 
 
   return (
-    <>
+    <UserContext.Provider value={cart}>
+      <>
       {items.map((detail, index) => {
         return (
           <div className="plant" key={index}>
@@ -66,6 +72,7 @@ function Items({ items, cart, setCart }) {
         );
       })}
     </>
+    </UserContext.Provider>
   );
 }
 

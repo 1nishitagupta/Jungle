@@ -88,3 +88,13 @@
   box-shadow: 1px 1px 10px 5px #e1e1e1;
 
 }
+
+
+.displayData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.displayData p{
+  padding-right: 5px;
+}

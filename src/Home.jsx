@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.css";
 import Header from "./Header";
 import Cart from "./Cart";
 import Items from "./Items";
 
+
+
 function Home() {
-    
-    const [cart, setCart] = useState([])
 
   const items = [
     { path: "images/items/plant1.jpg", name: "plant1", id: 1, price: 10 },
@@ -33,10 +33,10 @@ function Home() {
   return (
     <>
       <Header />
-      <Cart cart={cart} setCart={setCart} />
       <div className="items">
-        <Items cart={cart} setCart={setCart} items={items} />
+        <Items items={items} />
       </div>
+      <Cart />
     </>
   );
 }
