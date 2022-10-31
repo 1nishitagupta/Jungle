@@ -1,8 +1,8 @@
 import React from "react";
 import "./index.css";
 import Header from "./Header";
-import Cart from "./Cart";
 import Items from "./Items";
+
 
 
 
@@ -32,11 +32,14 @@ function Home() {
   ];
   return (
     <>
+  
       <Header />
       <div className="items">
         <Items items={items} />
       </div>
-      <Cart />
+      
+  
+ 
     </>
   );
 }
